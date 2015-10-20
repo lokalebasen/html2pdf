@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 MAINTAINER Niels Buus
 ENV REFRESHED_AT 2015-05-04
-ENV DEBAIN_FRONTEND=noninteractive
+ENV DEBAIN_FRONTEND noninteractive
 
 RUN apt-get update -y && \
     apt-get install -y \
