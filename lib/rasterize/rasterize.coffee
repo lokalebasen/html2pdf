@@ -12,8 +12,8 @@ else
   address = system.args[1]
   output = system.args[2]
   page.viewportSize =
-    width: 800
-    height: 800
+    width: 595
+    height: 842
   #size
   size = system.args[3].split('*')
   page.paperSize = if size.length is 2
