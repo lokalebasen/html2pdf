@@ -12,7 +12,7 @@ process.chdir path.join(__dirname, '..')
 app.use middleware.domain()
 app.use morgan('combined')
 app.use compression()
-app.use bodyParser.json()
+app.use bodyParser.json(limit: '50mb')
 require('./routes.coffee') app
 app.use express['static'](__dirname + '/../public', clientMaxAge: -1000 * 60 * 60 * 24)
 app.use express['static'](__dirname + '/../favicon', clientMaxAge: -1000 * 60 * 60 * 24)
