@@ -10,7 +10,7 @@ RUN apt-get update -y && \
       libpng-dev libjpeg-dev python git-core nodejs npm
 
 WORKDIR /var/www/html2pdf
-ADD build.tar .
+ADD build.tar /var/www/html2pdf
 RUN cp bin/phantomjs /usr/local/bin/
 RUN npm install
 EXPOSE 8080
