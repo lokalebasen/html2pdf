@@ -6,7 +6,9 @@ Uuid = require('node-uuid')
 module.exports = class PhantomRunner
 
   constructor: (@conversionOptions) ->
-    @phantomProcess = ChildProcess.spawn.apply(this, ['phantomjs', @phantomArguments()])
+    systemCall = ['phantomjs', @phantomArguments()]
+    console.log ("Invoking: #{systemCall}")
+    @phantomProcess = ChildProcess.spawn.apply(this, systemCall)
     @phantomProcess.stdout.on 'data', (data) ->
       console.log 'PhantomJS says: ' + data
     @phantomProcess.stderr.on 'data', (data) ->
